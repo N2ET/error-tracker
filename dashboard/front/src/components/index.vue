@@ -1,20 +1,25 @@
 <template>
   <div>
     <page-header></page-header>
-    <page-main class="page-main"></page-main>
+    <div>
+      <page-nav class="page-nav"></page-nav>
+      <page-main class="page-main"></page-main>
+    </div>
   </div>
 </template>
 
 <script>
 import PageHeader from './header';
 import PageMain from './main';
+import PageNav from './nav';
 
 export default {
   name: 'index',
 
   components: {
     PageHeader,
-    PageMain
+    PageMain,
+    PageNav
   },
 
   data() {
@@ -81,7 +86,13 @@ export default {
 </script>
 
 <style>
+
+  .page-nav {
+    float: left;
+  }
+
   .page-main {
-    padding: 20 10px 0;
+    padding: 5px;
+    margin-left: 200px;
   }
 </style>
