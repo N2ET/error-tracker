@@ -2,10 +2,7 @@
 
 require('./log.php');
 require_once('./db.php');
-
-header('Access-Control-Allow-Origin:*');
-header('Access-Control-Allow-Methods:POST');
-header('Access-Control-Allow-Headers:access-control-allow-origin');
+require_once('./cros.php');
 
 try {
 	if($_POST) {
