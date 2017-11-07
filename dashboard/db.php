@@ -1,11 +1,11 @@
 <?php
 
-const DB_DSN = 'mysql:host=localhost';
-const DB_FULL_DSN = 'mysql:host=localhost;dbname=error_track';
 const DB_USER = 'root';
 const DB_PWD = '';
 const DB_NAME = 'zsb';
 const DB_TABLE_NAME = 'error_track';
+const DB_DSN = 'mysql:host=localhost';
+const DB_FULL_DSN = 'mysql:host=localhost;dbname='.DB_NAME;
 
 function db_init_pdo() {
     try {
