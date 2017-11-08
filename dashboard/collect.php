@@ -53,10 +53,17 @@ foreach($data as $item_key=>$item_value) {
 	foreach($keys as $index=>$value) {
 		debug_print("$index: $value<br />");
 		
-		if(array_key_exists($value, $item_value)) {
-			$stmt->bindParam(':'.$value, $item_value[$value]);
-			debug_print("bind param: $value->$item_value[$value]");
+		//if(array_key_exists($value, $item_value)) {
+			//$stmt->bindParam(':'.$value, $item_value[$value]);
+			//debug_print("bind param: $value->$item_value[$value]");
+		//}
+		if(!array_key_exists($value, $item_value)) {
+			$item_value[$value] = '';
 		}
+		$stmt->bindParam(':'.$value, $item_value[$value]);
+		debug_print("bind param: $value->$item_value[$value]");
+		
+		
 		debug_print('<br />');
 	}
 

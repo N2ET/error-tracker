@@ -1,10 +1,8 @@
 <?php 
 
-const DB_DSN = 'mysql:host=localhost';
-const DB_USER = 'root';
-const DB_PWD = '';
-const DB_NAME = 'zsb';
-const DB_TABLE_NAME = 'error_track';
+require_once('log.php');
+require_once('db.php');
+require_once('cros.php');
 
 try {
 	$db = new PDO(DB_DSN, DB_USER, DB_PWD);	
@@ -58,7 +56,7 @@ $sql_create = 'CREATE TABLE `'.DB_TABLE_NAME.'` (
 	`type` varchar(64) DEFAULT NULL,
 	`des` varchar(4096) DEFAULT NULL,
 	`detail` varchar(4096) DEFAULT NULL,
-	`idx` int(11) DEFAULT 0,
+	`idx` varchar(12) DEFAULT NULL,
 	PRIMARY KEY (`id`)
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8';
 
